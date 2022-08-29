@@ -1,10 +1,19 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <PokeHeader/>
   <router-view/>
 </template>
+
+
+<script>
+  import PokeHeader from "./components/PokeHeader";
+  export default {
+    name: "App",
+    components: {
+      PokeHeader,
+    }
+  }
+  </script>
+
 
 <style lang="scss">
 #app {
