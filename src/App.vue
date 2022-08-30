@@ -1,21 +1,25 @@
 <template>
   <PokeHeader/>
+  <PokeList/>
   <router-view/>
 </template>
 
 
 <script>
   import PokeHeader from "./components/PokeHeader";
+  import PokeList from "./components/PokeList";
   export default {
     name: "App",
     components: {
-      PokeHeader,
+      PokeHeader, PokeList
     }
   }
   </script>
 
 
 <style lang="scss">
+body {
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
