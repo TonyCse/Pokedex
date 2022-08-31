@@ -1,33 +1,34 @@
 <template>
   <PokeHeader/>
-  <PokeList/>
   <router-view/>
 </template>
 
 
 <script>
   import PokeHeader from "./components/PokeHeader";
-  import PokeList from "./components/PokeList";
   export default {
     name: "App",
     components: {
-      PokeHeader, PokeList
+      PokeHeader
     }
   }
   </script>
 
 
 <style lang="scss">
-body {
-}
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Press Start 2P', cursive, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
 
+body{
+  background-color: rgb(195, 207, 161);
+}
 nav {
   padding: 30px;
 

@@ -2,7 +2,7 @@
       <header>
             <div class="logo">
                   <router-link to="/">
-                        <img src="../assets/pokemonlogo.png" alt="pokemon-logo">
+                        <img src="../assets/poke.png" alt="pokemon-logo">
                   </router-link>
             </div>
       </header>
@@ -22,6 +22,6 @@
 
 <style scoped lang="scss">
 .logo img {
-      width: 400px;
+      max-width: 400px;
 }
 </style>

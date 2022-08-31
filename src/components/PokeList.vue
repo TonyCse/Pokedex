@@ -8,6 +8,7 @@
                         </div>
                         <h2>{{pokemon.pokemon_species.name}}</h2>
                         <div class="card_title_type" v-for="pokemon in pokemon" :key="pokemon.types">
+                              {{pokemon.types}}
                         </div>
                   </div>
                   <div class="pokeball">
@@ -24,7 +25,6 @@
         name: 'PokeList',
         data: () => ({
             pokemons: [],
-            pokemon: []
         }),
         async mounted() {
             const pokeList = await axios.get('http://pokeapi.co/api/v2/pokedex/2/')
@@ -32,11 +32,10 @@
             console.log(pokeList);
             this.pokemons = pokeList.pokemon_entries
             
-            pokeList.pokemon_entries.forEach(pokemon => {
-                  const poke = axios('http://pokeapi.co/api/v2/pokemon/'+pokemon.entry_number)
-                  .then(response => console.log(response))
-                  this.pokemon = poke.data
-            });
+            // pokeList.pokemon_entries.forEach(pokemon => {
+            //       const poke = axios('http://pokeapi.co/api/v2/pokemon/')
+            //       .then(response => console.log(response.data))
+            // });
         }
       }
       
