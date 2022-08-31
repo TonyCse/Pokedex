@@ -113,19 +113,4 @@ display: none;
               0 0 0 1px black,
               inset 0 0 0 1px black;
 }
-.box > i {
-  width: 0;
-  height: 0;
-  border: 5px solid transparent;
-  border-top-color: black;
-  margin-top: 23px;
-  animation: bounce 0.5s ease-in-out 0 infinite alternate;
-  float: right;
-}
-
-@keyframes bounce {
-  from { margin-top: 20px; }
-  to { margin-top: 23px; }
-}
-
 </style>
