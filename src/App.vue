@@ -1,15 +1,17 @@
 <template>
   <PokeHeader/>
   <router-view/>
+  <PokeFooter/>
 </template>
 
 
 <script>
   import PokeHeader from "./components/PokeHeader";
+  import PokeFooter from "./components/PokeFooter"
   export default {
     name: "App",
     components: {
-      PokeHeader
+      PokeHeader,PokeFooter
     }
   }
   </script>
@@ -27,7 +29,7 @@
 }
 
 body{
-  background-color: rgb(195, 207, 161);
+  background-color: rgb(250, 241, 155);
 }
 nav {
   padding: 30px;
