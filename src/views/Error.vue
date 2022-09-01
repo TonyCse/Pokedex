@@ -17,14 +17,14 @@ export default {
 <style>
 
 .p {
-      margin: 40px;
-      font-size: 22px;
+      margin: 60px;
+      font-size: 29px;
 }
 
 .imag{
-      margin-top: 45px;
-      margin-bottom: 45px;
+      margin-top: 50px;
+      margin-bottom: 50px;
       width: 650px;
-      height: 400px;
+      height: 405px;
 }
 </style>
