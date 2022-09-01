@@ -1,24 +1,17 @@
-# pokedex
+![N|Solid](https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png)
+# Pokedex
+
 
 ## Project setup
+Create an empty folder then clone this repository inside:
 ```
-npm install
+git clone https://github.com/SANBLEU/Pokedex
 ```
 
-### Compiles and hot-reloads for development
+Then install the front-end dependencies and launch the server with the command:
 ```
+npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Open browser at http://localhost:8080/
