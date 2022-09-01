@@ -22,6 +22,6 @@
 
 <style scoped lang="scss">
 .logo img {
-      max-width: 400px;
+      width: 500px;
 }
 </style>

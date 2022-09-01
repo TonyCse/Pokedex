@@ -112,10 +112,12 @@
         <div class="pokedex-goldButton">
         </div>
         <div class="pokedex-blackButtons">
-          <div class="pokedex-blackButton">
+          <div class="pokedex-blackButton-left"></div>
+          <router-link to="/">
+          <div class="pokedex-blackButton-right">
+            <p>BACK</p>
           </div>
-          <div class="pokedex-blackButton">
-          </div>
+        </router-link>
         </div>
       </div>
     </div>
@@ -128,6 +130,7 @@
   export default {
     name: 'PokemonView',
   methods: {
+    // funtion to get pokemon data by id
     getPokemon() {
       axios.get("https://pokeapi.co/api/v2/pokemon/"+this.id)
       .then((res) => {
@@ -170,6 +173,7 @@ section{
   height: 670px;
   margin: auto;
   position: relative;
+  margin-bottom: 77px;
 }
 .pokedex-left {
   display: flex;
@@ -188,13 +192,9 @@ section{
 }
 .pokedex-lights-lg {
   background: #a8f2fb;
-  /* Old browsers */
   background: -moz-radial-gradient(center, ellipse cover, #a8f2fb 0%, #0df1fc 50%, #0ebcd4 100%);
-  /* FF3.6-15 */
   background: -webkit-radial-gradient(center, ellipse cover, #a8f2fb 0%, #0df1fc 50%, #0ebcd4 100%);
-  /* Chrome10-25,Safari5.1-6 */
   background: radial-gradient(ellipse at center, #a8f2fb 0%, #0df1fc 50%, #0ebcd4 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   border-radius: 50%;
   border-top: 5px solid white;
   border-right: 5px solid white;
@@ -217,33 +217,21 @@ section{
 }
 .pokedex-lights-sm-light.one {
   background: #ed3743;
-  /* Old browsers */
   background: -moz-radial-gradient(center, ellipse cover, #ed3743 0%, #aa0515 100%);
-  /* FF3.6-15 */
   background: -webkit-radial-gradient(center, ellipse cover, #ed3743 0%, #aa0515 100%);
-  /* Chrome10-25,Safari5.1-6 */
   background: radial-gradient(ellipse at center, #ed3743 0%, #aa0515 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 .pokedex-lights-sm-light.two {
   background: #dee25a;
-  /* Old browsers */
   background: -moz-radial-gradient(center, ellipse cover, #dee25a 0%, #8e993b 100%);
-  /* FF3.6-15 */
   background: -webkit-radial-gradient(center, ellipse cover, #dee25a 0%, #8e993b 100%);
-  /* Chrome10-25,Safari5.1-6 */
   background: radial-gradient(ellipse at center, #dee25a 0%, #8e993b 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 .pokedex-lights-sm-light.three {
   background: #a9f74c;
-  /* Old browsers */
   background: -moz-radial-gradient(center, ellipse cover, #a9f74c 0%, #66a638 100%);
-  /* FF3.6-15 */
   background: -webkit-radial-gradient(center, ellipse cover, #a9f74c 0%, #66a638 100%);
-  /* Chrome10-25,Safari5.1-6 */
   background: radial-gradient(ellipse at center, #a9f74c 0%, #66a638 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 .pokedex-screen {
   position: relative;
@@ -556,12 +544,28 @@ section{
   display: flex;
   justify-content: space-between;
 }
-.pokedex-blackButton {
+.pokedex-blackButton-left {
   width: 50%;
   border-radius: 10px;
   height: 100%;
   margin: 0 10px;
   background: #2c2c2c;
 }
-
+.pokedex-blackButton-right {
+  border-radius: 10px;
+  height: 100%;
+  background: #2c2c2c;
+}
+.pokedex-blackButtons a {
+  width: 175px;
+  text-decoration: none;
+}
+.pokedex-blackButton-right p {
+  margin: 0px;
+  height: 60px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>

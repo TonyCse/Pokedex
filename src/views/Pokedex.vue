@@ -45,6 +45,7 @@
         }
     }),
     methods: {
+      // function to get pokemon array
       getPokedex() {
         axios.get('http://pokeapi.co/api/v2/pokedex/2/')
         .then((res) => {
@@ -103,12 +104,10 @@
   0% {transform: translateY(15px); opacity: 0}
   100% {transform: translateY(0); opacity: 1;}
 }
-
 .card:hover{
   background-color: rgb(195, 207, 161);
   animation: bounce 1s ease both;
 }
-
 @keyframes bounce {
   10% { transform:translateY(0%); }
   30% { transform:translateY(-15%); }
@@ -118,7 +117,6 @@
   99% { transform:translateY(-3%); }
   100% { transform:translateY(0); }
 }
-
 #link {
   text-decoration: none;
   width: 100%;
@@ -141,6 +139,7 @@ p{
   width: 1000px;
   height: 670px;
   margin: auto;
+  margin-bottom: 77px;
 }
 .gameboy-color {
   display: flex;
@@ -148,12 +147,14 @@ p{
   align-items: center;
   position: relative;
   height: 100%;
-  width: 50%;
+  width: 45%;
   border-radius: 40px 15px 15px 40px;
   background: #d30a40;
   border-left: 20px solid #90062a;
   border-bottom: 12px solid #90062a;
 }
+
+/* GAMEBOY BUTTONS */
 .buttons{
   width: 80%;
   height: 59px;
@@ -196,7 +197,6 @@ p{
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-
 .btb-right{
   width: 80px;
   height: 50px;
