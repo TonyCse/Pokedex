@@ -26,7 +26,7 @@
       height: 100px;
       line-height: 16px;
       color: black;
-      background: rgb(255, 255, 255);
+      background: rgb(221, 221, 221);
       border: 1px solid white;
       box-shadow: 0 1px 0 1px black, inset 0 1px 0 1px black, 0 0 0 1px black, inset 0 0 0 1px black;
 }

@@ -29,7 +29,7 @@
 }
 
 body{
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(201, 201, 201);
 }
 nav {
   padding: 30px;
