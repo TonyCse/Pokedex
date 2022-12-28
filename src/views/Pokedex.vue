@@ -47,7 +47,7 @@
     methods: {
       // function to get pokemon array
       getPokedex() {
-        axios.get('http://pokeapi.co/api/v2/pokedex/2/')
+        axios.get('https://pokeapi.co/api/v2/pokedex/2/')
         .then((res) => {
           this.pokemons = res.data.pokemon_entries
         })
