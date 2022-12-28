@@ -1,4 +1,5 @@
 <template>
+<div>
   <h1>Pokedex first gen</h1>
   <article id="article">
     <div class="gameboy"> 
@@ -25,10 +26,11 @@
         <span class="btn-b">B</span>
       </div>
       <div class="select-start">Select Start</div>
-    </div>
       </div>
-    </div>
-  </article>
+        </div>
+      </div>
+    </article>
+  </div>
 </template>
 
 <script>
