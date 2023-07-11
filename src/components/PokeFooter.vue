@@ -12,9 +12,6 @@
         props: {
             text: String,
         },
-        components: {
-          
-        }
       }
 </script>
 

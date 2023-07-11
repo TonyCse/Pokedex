@@ -66,10 +66,14 @@
       <div class="pokedex-right">
         <div class="pokedex-info-container">
           <h2 class="pokemon-name">{{pokemon.name}}</h2>
-          <ul class="pokemon-types">
-            {{pokemon.type}}
-            {{pokemon.typetwo}}
-          </ul>
+          <div class="pokemon-type">
+            <div :class="pokemon.type" class="type-label">
+              {{pokemon.type}}
+            </div>
+            <div v-if="pokemon.typetwo" :class="pokemon.typetwo" class="type-label">
+              {{pokemon.typetwo}}
+            </div>
+          </div>
         </div>
         <div class="pokedex-buttons-shadow">
         </div>
@@ -104,9 +108,11 @@
         <div class="pokedex-dualButtons-shadow">
         </div>
         <div class="pokedex-dualButtons">
-          <div class="pokedex-dualButton first">
+          <div class="pokedex-dualButton first" @click="previusPk">
+            prev
           </div>
-          <div class="pokedex-dualButton second">
+          <div class="pokedex-dualButton second" @click="nextPk">
+            next
           </div>
         </div>
         <div class="pokedex-goldButton">
@@ -140,10 +146,41 @@
         this.pokemon.type = res.data.types[0].type.name;
         if (res.data.types[1])
         this.pokemon.typetwo = res.data.types[1].type.name;
-        console.log(this.pokemon);
       })
       .catch(error => this.$router.push({name:"ErrorView"}))
-    }
+    },
+    previusPk() {
+      if (this.pokemon.id == 1) {
+        return;
+      }
+      const prev = this.pokemon.id - 1
+      axios.get("https://pokeapi.co/api/v2/pokemon/"+prev)
+      .then((res) => {
+        this.pokemon.name = res.data.name;
+        this.pokemon.id = res.data.id;
+        this.pokemon.image = res.data.sprites.front_default;
+        this.pokemon.type = res.data.types[0].type.name;
+        if (res.data.types[1])
+        this.pokemon.typetwo = res.data.types[1].type.name;
+      })
+      .catch(error => this.$router.push({name:"ErrorView"}))
+    },
+    nextPk() {
+      if (this.pokemon.id == 1008) {
+        return;
+      }
+      const next = this.pokemon.id + 1
+      axios.get("https://pokeapi.co/api/v2/pokemon/"+next)
+      .then((res) => {
+        this.pokemon.name = res.data.name;
+        this.pokemon.id = res.data.id;
+        this.pokemon.image = res.data.sprites.front_default;
+        this.pokemon.type = res.data.types[0].type.name;
+        if (res.data.types[1])
+        this.pokemon.typetwo = res.data.types[1].type.name;
+      })
+      .catch(error => this.$router.push({name:"ErrorView"}))
+    },
   },
   mounted() {
     this.getPokemon()
@@ -417,17 +454,16 @@ section{
   align-items: center;
 }
 .pokedex-info-container {
-  width: 300px;
-  height: 100px;
+  width: 342px;
+  height: 154px;
   position: absolute;
-  top: 130px;
+  top: 61px;
   border-radius: 7px;
   background: #084035;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #22c4ea;
 }
 .pokedex-info-container .pokemon-name {
   font-size: 20px;
@@ -498,6 +534,7 @@ section{
   border-radius: 10px;
 }
 .pokedex-dualButtons {
+  cursor: pointer;
   display: flex;
   height: 50px;
   width: 120px;
@@ -517,8 +554,13 @@ section{
 .pokedex-dualButton {
   background: #e3e3e3;
   width: 50%;
+  size: 1px;
+  padding-left: 6px;
+  display: flex;
+  font-size: 11px;
   height: 100%;
   margin: 1px;
+  align-items: center;
 }
 .pokedex-dualButton.first {
   border-radius: 10px 0 0 10px;
@@ -567,5 +609,72 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.pokemon-type{
+  display: flex;
+}
+.type-label{
+  color: white;
+  padding: 7px;
+  margin: 10px;
+  border-radius: 5px;
+}
+.grass {
+    background-color: #9bcc50;
+}
+.fire{
+    background-color: #fd7d24;
+}
+.water{
+    background-color: #4592c4;
+}
+.bug{
+    background-color: #729f3f;
+}
+.normal{
+    background-color: #a4acaf;
+}
+.poison{
+    background-color: #b97fc9;
+}
+.electric{
+    background-color: #eed535;
+}
+.ground{
+    background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+    background-color: #f7de3f;
+}
+.fairy{
+    background: #fdb9e9;
+}
+.psychic{
+    background: #f366b9;
+}
+.fighting{
+    background: #d56723;
+}
+.rock{
+    background: #a38c21;
+}
+.ice{
+    background: #51c4e7;
+}
+.ghost{
+    background: #7b62a3;
+}
+.dragon{
+    background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+    background-color: #53a4cf;
+}
+.steel{
+  background-color: #9eb7b8;
+}
+.flying{
+  background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+  background-color: #3dc7ef;
+}
+
+.dark {
+  background-color: black
 }
 </style>

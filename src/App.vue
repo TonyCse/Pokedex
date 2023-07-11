@@ -28,8 +28,8 @@
   color: #2c3e50;
 }
 
-body{
-  background-color: rgb(201, 201, 201);
+body {
+  background-image: url("https://i.imgur.com/O7ZWigt.png");
 }
 nav {
   padding: 30px;

@@ -6,14 +6,11 @@
       <div class="gameboy-color">
         <div class="screen-border">
           <div class="container">
-            <div class="card" v-for="pokemon in pokemons" :key="pokemon.id">
+            <div v-for="pokemon in pokemons" :key="pokemon.id">
               <router-link id="link" :to="{name: 'PokemonView', params: {id: pokemon.entry_number}}">
-                <div class="card_id">
-                  #{{pokemon.entry_number}}
-                </div>
-                <div class="card_title">
-                  <p>{{pokemon.pokemon_species.name}}</p>
-                </div>
+                  <PokeCard
+                    :pokemon="pokemon"
+                  />
               </router-link>
             </div>
             <span class="arrow"></span>
@@ -35,9 +32,13 @@
 
 <script>
   import axios from 'axios'
+  import PokeCard from "../components/PokeCard";
     
   export default {
     name: 'PokeView',
+    components: {
+      PokeCard
+    },
     data: () => ({
       lang:[],
         pokemons: [],
@@ -54,11 +55,11 @@
           this.pokemons = res.data.pokemon_entries
         })
         .catch(error => this.$router.push({name:"ErrorView"}))
-      }
+      },
     },
-    mounted() {
+    created() {
       this.getPokedex()
-    }
+    },
   } 
 </script>
 
@@ -70,8 +71,9 @@
 }
 .container{
   overflow: scroll;
-  height: 75%;
-  width: 75%;
+  padding: 20px;
+  height: 70%;
+  width: 70%;
   border: 2px solid black;
   background-color:rgb(161, 177, 116);
   margin: 25px;
@@ -87,19 +89,9 @@
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 88%;
   height: 350px;
   border-radius: 4px 4px 33px 4px;
-}
-.card {
-  display: flex;
-  justify-content: center;
-  height: 50px;
-  margin: 30px;
-  border: 2px solid rgb(51, 50, 50);
-  text-decoration: none;
-  animation: pokeanimation 1s ease both;
-  -webkit-animation: pokeanimation 1s ease both;
 }
 
 @keyframes pokeanimation {
@@ -107,8 +99,7 @@
   100% {transform: translateY(0); opacity: 1;}
 }
 .card:hover{
-  background-color: rgb(195, 207, 161);
-  animation: bounce 1s ease both;
+  animation: bounce 0.5s ease both;
 }
 @keyframes bounce {
   10% { transform:translateY(0%); }
