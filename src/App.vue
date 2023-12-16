@@ -29,7 +29,7 @@
 }
 
 body {
-  background-image: url("https://i.imgur.com/O7ZWigt.png");
+  background-image: url("assets/wallpaper.png");
 }
 nav {
   padding: 30px;
