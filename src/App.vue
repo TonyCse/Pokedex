@@ -30,6 +30,7 @@
 
 body {
   background-image: url("assets/wallpaper.png");
+   overflow: hidden;
 }
 nav {
   padding: 30px;
