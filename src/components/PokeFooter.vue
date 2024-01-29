@@ -21,8 +21,6 @@
       justify-content: center;
 }
 .box {
-      position: absolute;
-      bottom: 5px;
       font-size: 14px;
       border-radius: 2px;
       height: 100px;
